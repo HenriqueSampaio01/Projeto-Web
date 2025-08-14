@@ -147,3 +147,11 @@ button:hover {
         padding: 20px;
     }
 }
+
+footer {
+    background-color: #ff4b2b;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
