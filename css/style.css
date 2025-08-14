@@ -1,18 +1,157 @@
+/* ===== Reset ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Variáveis Globais ===== */
+:root {
+    --primary-color: #ff6b35; /* Laranja FoodHub */
+    --secondary-color: #333;
+    --background-color: #fff;
+    --text-color: #222;
+
+    --border-radius: 6px;
+    --transition-speed: 0.3s;
+}
+
+/* ===== Tema Escuro (opcional para futuro) ===== */
+[data-theme="dark"] {
+    --primary-color: #ff865e;
+    --secondary-color: #ddd;
+    --background-color: #121212;
+    --text-color: #f1f1f1;
+}
+
+/* ===== Estilo Global ===== */
 body {
-    background-color: #000000   ;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.links a{
+/* ===== Header ===== */
+header {
+    background: var(--primary-color);
+    padding: 15px 0;
+}
+
+header .links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header .links a {
+    color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed);
 }
 
-.links {
-    margin-top: 2rem;
-    padding: 3rem;
+header .links a:hover {
+    color: #ffd7c2;
+}
+
+/* Botão de login diferenciado */
+.botao-login a {
+    background: white;
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+.botao-login a:hover {
+    background: #ffd7c2;
+    color: #fff;
+}
+
+/* ===== Main (Conteúdo) ===== */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* ===== Formulário ===== */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+button {
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+button:hover {
+    background: #e35a28;
+}
+
+/* ===== Link de Cadastro ===== */
+.cadastrar {
+    margin-top: 20px;
+}
+.cadastrar h3 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+.cadastrar a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 5px;
+}
+.cadastrar a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 480px) {
+    header .links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    form {
+        padding: 20px;
+    }
+}
+
+footer {
+    background-color: #ff4b2b;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
 }
