@@ -1,1 +1,2 @@
-document.documentElement.setAttribute("data-theme", "dark");
+function toggleTheme() {
+document.documentElement.setAttribute("data-theme", "dark");}

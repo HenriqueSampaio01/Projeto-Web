@@ -32,6 +32,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url('../imagens/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* ===== Header ===== */
@@ -92,6 +96,16 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+form label {
+    font-weight: bold;
 }
 
 input {
