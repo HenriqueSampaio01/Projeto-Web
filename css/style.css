@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Times New Roman;
 }
 
 /* ===== Variáveis Globais ===== */
@@ -62,16 +63,23 @@ header .links a:hover {
     color: #ffd7c2;
 }
 
+.title {
+    text-align: center;
+    color: brown;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 /* Botão de login diferenciado */
 .botao-login a {
-    background: white;
-    color: var(--primary-color);
+    background: #24a855;
     padding: 8px 15px;
-    border-radius: var(--border-radius);
-    transition: background var(--transition-speed), color var(--transition-speed);
+    border-radius: 9px;
 }
 .botao-login a:hover {
-    background: #ffd7c2;
+    background: #1d8844;
+    transition: 0.8s;
     color: #fff;
 }
 
@@ -87,7 +95,7 @@ main {
 
 /* ===== Formulário ===== */
 form {
-    background: white;
+    background: #dbd6db;
     padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -101,11 +109,14 @@ form {
 form h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 20px;
+    color: #ff865e;
 }
 
 form label {
     font-weight: bold;
+    font-size: 20px;
 }
 
 input {
@@ -122,25 +133,26 @@ input:focus {
 
 button {
     padding: 10px;
-    background: var(--primary-color);
+    background: #e35a28;
     color: white;
     border: none;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
+    border-radius: 9px;
+    font-size: 20px;
     cursor: pointer;
-    transition: background var(--transition-speed);
+    transition: 0.6s;
 }
 button:hover {
-    background: #e35a28;
+    background: #ff865e;
 }
 
 /* ===== Link de Cadastro ===== */
 .cadastrar {
-    margin-top: 20px;
+    padding: 20px;
 }
 .cadastrar h3 {
     font-size: 1rem;
-    font-weight: normal;
+    font-weight: bold;
+    color: #0c0c0c;
 }
 .cadastrar a {
     color: var(--primary-color);
@@ -151,6 +163,18 @@ button:hover {
     text-decoration: underline;
 }
 
+.link-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.link-login a {
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #24a855;
+}
 /* ===== Responsividade ===== */
 @media (max-width: 480px) {
     header .links ul {
