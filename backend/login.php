@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $senha = $_POST["senha"];
 
     try {
-        $sql = "SELECT * FROM users WHERE email = :email";
+        $sql = "SELECT * FROM usuario WHERE email = :email";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(":email", $email);
         $stmt->execute();
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: dashboard.php");
             exit;
         } else {
-            echo "<script>alert('E-mail ou senha inválidos!'); window.location.href='../frontend/login.html';</script>";
+            echo "<script>alert('E-mail ou senha inválidos!'); window.location.href='../html/login.html';</script>";
         }
     } catch (PDOException $e) {
         echo "Erro no servidor: " . $e->getMessage();

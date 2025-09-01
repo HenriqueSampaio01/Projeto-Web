@@ -4,7 +4,7 @@ document.getElementById("formCadastro").addEventListener("submit", async (e) => 
   const formData = new FormData(document.getElementById("formCadastro"));
 
   try {
-    const response = await fetch("../backend/cadastro.php", {
+    const response = await fetch("/backend/cadastrar.php", {
       method: "POST",
       body: formData
     });
@@ -13,11 +13,11 @@ document.getElementById("formCadastro").addEventListener("submit", async (e) => 
 
     if (data.message) {
       alert(data.message);
-      window.location.href = "login.html";
+      window.location.href = "/html/login.html";
     } else {
       alert(data.error);
     }
   } catch (error) {
-    alert("Erro de conexão com o servidor.");
+    alert(error);
   }
 });

@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     try {
-        $sql = "INSERT INTO users (nome, email, senha) VALUES (:nome, :email, :senha)";
+        $sql = "INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":email", $email);
@@ -24,11 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         echo json_encode(["message" => "Usuário cadastrado com sucesso"]);
     } catch (PDOException $e) {
-        if ($e->getCode() == 23000) {
-            echo json_encode(["error" => "E-mail já cadastrado"]);
-        } else {
-            echo json_encode(["error" => "Erro ao cadastrar"]);
-        }
+    echo json_encode([
+        "error" => $e->getMessage(),
+    ]);
     }
 }
 ?>
