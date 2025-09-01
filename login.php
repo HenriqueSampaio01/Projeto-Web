@@ -1,9 +1,31 @@
 <?php
 session_start();
-include("db.php");
+require_once "db.php"; // conexão com o banco
 
-$email = $_POST['email']
-$senha = md5($_POST['senha'])
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
 
+    try {
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(":email", $email);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        if ($user && password_verify($senha, $user["senha"])) {
+            // Criar sessão
+            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_nome"] = $user["nome"];
+
+            // Redirecionar para área restrita
+            header("Location: dashboard.php");
+            exit;
+        } else {
+            echo "<script>alert('E-mail ou senha inválidos!'); window.location.href='../frontend/login.html';</script>";
+        }
+    } catch (PDOException $e) {
+        echo "Erro no servidor: " . $e->getMessage();
+    }
+}
 ?>
