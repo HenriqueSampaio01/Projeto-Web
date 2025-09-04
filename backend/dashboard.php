@@ -17,7 +17,7 @@ if (!isset($_SESSION["user_id"])) {
     <h2>FoodHub - Área Restrita</h2>
     <nav>
       <ul>
-        <li><a href="usuarios.php">Gerenciar Usuários</a></li>
+        <li><a href="../html/usuarios.html">Gerenciar Usuários</a></li>
         <li><a href="pedidos.php">Gerenciar Pedidos</a></li>
         <li><a href="../backend/logout.php">Sair</a></li>
       </ul>

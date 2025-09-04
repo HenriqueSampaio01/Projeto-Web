@@ -35,6 +35,7 @@ services:
       - ./css:/var/www/html/css
       - ./js:/var/www/html/JS
       - ./backend:/var/www/html/backend
+      - ./imagens:/var/www/html/imagens
     ports:
       - "8081:80"
     depends_on:

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bindParam(":senha", $senha);
 
     if ($stmt->execute()) {
-        header("Location: ../frontend/usuarios.html");
+        header("Location: ../html/usuarios.html");
     } else {
         echo "Erro ao cadastrar usuário.";
     }

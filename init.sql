@@ -7,3 +7,9 @@ CREATE TABLE IF NOT EXISTS usuario (
     senha VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS lanches (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    ingredientes VARCHAR(500) NOT NULL,
+    preco VARCHAR(20)
+);

@@ -8,6 +8,6 @@ if (isset($_GET["id"])) {
     $stmt->execute();
 }
 
-header("Location: ../frontend/usuarios.html");
+header("Location: ../html/usuarios.html");
 exit;
 ?>

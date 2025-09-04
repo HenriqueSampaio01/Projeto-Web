@@ -22,6 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bindParam(":id", $id);
 
     $stmt->execute();
-    header("Location: ../frontend/usuarios.html");
+    header("Location: ../html/usuarios.html");
 }
 ?>
