@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Usuário</title>
+  <link rel="stylesheet" href="../css/usuarios.css">
+</head>
+<body>
+  <h2>Novo Usuário</h2>
+  <form action="../backend/insert-lanche.php" method="POST">
+    <label>Nome:</label>
+    <input type="text" name="nome" required><br>
+    
+    <label>Ingredientes:</label>
+    <input type="text" name="Ingredientes" required><br>
+    
+    <label>Preço:</label>
+    <input type="text" name="preco" required><br><br>
+    
+    <button type="submit">Adicionar</button>
+  </form>
+</body>
+</html>

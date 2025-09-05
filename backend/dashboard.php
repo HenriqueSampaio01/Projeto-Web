@@ -18,7 +18,7 @@ if (!isset($_SESSION["user_id"])) {
     <nav>
       <ul>
         <li><a href="../html/usuarios.html">Gerenciar Usuários</a></li>
-        <li><a href="pedidos.php">Gerenciar Pedidos</a></li>
+        <li><a href="pedidos.php">Gerenciar Lanches</a></li>
         <li><a href="../backend/logout.php">Sair</a></li>
       </ul>
     </nav>
