@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciar Usuários</title>
+  <link rel="stylesheet" href="../css/usuarios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <h2>Usuários Cadastrados</h2>
+  
+  <a href="../backend/dashboard.php"> <i class="fa-solid fa-arrow-left">Voltar</i> </a> |
+  <a href="cadastrar-usuario.html"><i class="fa-solid fa-plus"></i> Novo Usuário</a>
+
+  <table border="1" cellpadding="10" id="tabelaUsuarios">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function carregarUsuarios() {
+      const response = await fetch("../backend/listar-usuario.php");
+      const usuarios = await response.json();
+      const tbody = document.querySelector("#tabelaUsuarios tbody");
+      tbody.innerHTML = "";
+
+      usuarios.forEach(u => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${u.id}</td>
+          <td>${u.nome}</td>
+          <td>${u.email}</td>
+          <td>
+            <a href="editar-usuario.html?id=${u.id}&nome=${encodeURIComponent(u.nome)}&email=${encodeURIComponent(u.email)}"><i class="fa-solid fa-pencil"></i> Editar</a> | 
+            <a href="../backend/excluir-usuario.php?id=${u.id}" onclick="return confirm('Tem certeza que deseja excluir?')"><i class="fa-solid fa-trash"></i> Excluir</a>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+    carregarUsuarios();
+  </script>
+</body>
+
+</html>

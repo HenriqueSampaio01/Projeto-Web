@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Usuário</title>
+  <link rel="stylesheet" href="../css/usuarios.css">
+</head>
+<body>
+  <h2>Novo Usuário</h2>
+  <form action="../backend/insert-usuario.php" method="POST">
+    <label>Nome:</label>
+    <input type="text" name="nome" required><br>
+    
+    <label>Email:</label>
+    <input type="email" name="email" required><br>
+    
+    <label>Senha:</label>
+    <input type="password" name="senha" required><br><br>
+    
+    <button type="submit">Cadastrar</button>
+  </form>
+</body>
+</html>
