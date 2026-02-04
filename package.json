@@ -1,0 +1,25 @@
+{
+  "name": "projeto-web",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "/backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueSampaio01/Projeto-Web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenriqueSampaio01/Projeto-Web/issues"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mysql2": "^3.16.3"
+  }
+}
