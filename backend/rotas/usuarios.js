@@ -2,20 +2,20 @@
 import { Router } from "express";
 
 //importando todas as funções do controller:
-import * as usuriosController from "../controller/usuarios-controller.js";
+import * as usuariosController from "../controller/usuarios-controller.js";
 
 const router = Router();
 
 //criando as rotas para o app:
-router.get("/", usuriosController.list); //GET | LISTA
+router.get("/", usuariosController.list); //GET | LISTA
 
-router.get("/:id", usuriosController.getById); //Esse lista por ID
+router.get("/:id", usuariosController.getById); //Esse lista por ID
 
-router.post("/", usuriosController.create); //POST | CRIA
+router.post("/", usuariosController.create); //POST | CRIA
 
-router.put("/:id", usuriosController.update); //PUT | EDITA VARIOS
+router.put("/:id", usuariosController.update); //PUT | EDITA VARIOS
 
-router.delete("/:id", usuriosController.delete);
+router.delete("/:id", usuariosController.remove);
 
 //exportando para o server.js usar
 export default router;
